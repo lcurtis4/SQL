@@ -1,4 +1,4 @@
-
+﻿
 
 --SELECT 
 --	Id,
@@ -90,6 +90,38 @@
 --Select * from album
 
 --#9 
+--insert into song (title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) 
+--Values ('Many Men', 185, '11/2/2021', 13, 30, 23);
+--Select * from Song
 
+--#10
+--Select s.title, a.title, ar.ArtistName
+--From Song s 
+--left join album a 
+--on a.id = s.AlbumId
+--left join artist ar 
+--on ar.id = s.ArtistId
+--where s.ArtistId = 30
 
+--#11
+--Select al.Title, COUNT(s.id) 'SongCount'
+--From Album al
+--left join song s
+--on al.id = s.AlbumId
+--Group By al.Title
+--Order By 'SongCount' DESC
 
+--#12
+--select ArtistName, Count(*) 'SongCount'
+--from Song 
+--inner join artist 
+--on song.ArtistId = artist.Id
+--group by artist.ArtistName
+
+--#13
+--Select g.Name, Count(s.Id) 'SongCount'
+--From Genre g
+--left join Song s 
+--on g.Id = s.GenreId
+--group by g.Name
+--order by 'SongCount' DESC;
